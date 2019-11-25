@@ -4,6 +4,8 @@ KERN_LDFLAGS := $(LDFLAGS) -T $(KERNDIR)/kernel.ld -nostdlib
 KERN_SRCFILES = \
 		$(KERNDIR)/entry.S \
 		$(KERNDIR)/start.c \
+		$(KERNDIR)/main.c \
+		$(KERNDIR)/kernel_vec.S \
 
 # Binary program images to embed within the kernel.
 KERN_OBJFILES := $(patsubst $(KERNDIR)/%.S, $(OBJDIR)/$(KERNDIR)/%.o, $(KERN_SRCFILES))
